@@ -10,3 +10,17 @@ cart.add(new Book(1001, 'War and Piece', 'Leo Tolstoy', 2000, 1225));
 cart.add(new MusicAlbum(1008, 'Meteora', 'Linkin Park', 900));
 
 console.log(cart.items);
+
+console.log(`Суммарная стоимость товаров в корзине ${cart.sum()}`);
+console.log(`Суммарная стоимость товаров в корзине со скидкой 10% ${cart.sumDiscount(10)}`);
+console.log(`Суммарная стоимость товаров в корзине со скидкой 0% ${cart.sumDiscount(0)}`);
+// console.log(`Суммарная стоимость товаров в корзине со скидкой 110% ${cart.sumDiscount(110)}`);
+// console.log(`Суммарная стоимость товаров в корзине со скидкой -50% ${cart.sumDiscount(-50)}`);
+
+cart.del(1008);
+console.log('Удаления товара с id 1008');
+console.log(cart.items);
+
+cart.del(1001);
+console.log('Удаления товара с id 1001');
+console.log(cart.items);
