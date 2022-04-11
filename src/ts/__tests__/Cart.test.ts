@@ -1,6 +1,7 @@
 import Cart from '../service/Cart';
 import Book from '../domain/Book';
 import MusicAlbum from '../domain/MusicAlbum';
+import Movie from '../domain/Movie';
 
 const bookObj = {
   id: 1001,
@@ -16,9 +17,31 @@ const musicAlbumObj = {
   author: 'Linkin Park',
   price: 900
 };
+const movieObj = {
+  id: 1022,
+  name: 'Мстители',
+  originalName: 'The Avengers',
+  year: 2012,
+  country: 'США',
+  taglines: '«Avengers Assemble!»',
+  genres: 'фантастика, боевик, фэнтези, приключения',
+  time: 137,
+  price: 3030,
+};
 
 const book = new Book(1001, 'War and Piece', 'Leo Tolstoy', 2000, 1225);
 const musicAlbum = new MusicAlbum(1008, 'Meteora', 'Linkin Park', 900);
+const movie = new Movie(
+  1022, 
+  'Мстители',
+  'The Avengers',
+  2012,
+  'США',
+  '«Avengers Assemble!»',
+  'фантастика, боевик, фэнтези, приключения',
+  137,
+  3030,
+);
 
 test('new card should be empty', () => {
   const cart = new Cart();
@@ -30,8 +53,9 @@ test('cart add Book and MusicAlbum', () => {
   const cart = new Cart();
   cart.add(book);
   cart.add(musicAlbum);
+  cart.add(movie);
 
-  expect(cart.items).toEqual([bookObj, musicAlbumObj]);
+  expect(cart.items).toEqual([bookObj, musicAlbumObj, movieObj]);
 });
 
 test('cart sum', () => {

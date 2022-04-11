@@ -2,6 +2,7 @@
 import Cart from './service/Cart';
 import Book from './domain/Book';
 import MusicAlbum from './domain/MusicAlbum';
+import Movie from './domain/Movie';
 
 const cart = new Cart();
 console.log(cart.items);
@@ -23,4 +24,18 @@ console.log(cart.items);
 
 cart.del(1001);
 console.log('Удаления товара с id 1001');
+console.log(cart.items);
+
+console.log('Добавляем в корзину фильм');
+cart.add(new Movie(
+  1022, 
+  'Мстители',
+  'The Avengers',
+  2012,
+  'США',
+  '«Avengers Assemble!»',
+  'фантастика, боевик, фэнтези, приключения',
+  137,
+  3030,
+));
 console.log(cart.items);
