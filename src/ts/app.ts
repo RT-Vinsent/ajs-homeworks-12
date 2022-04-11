@@ -59,4 +59,11 @@ for (let i = 0; i < cart.items.length; i += 1) {
   console.log(cart.items[i]);
 }
 
+console.log('\nУменьшим телефон Huawei на 1 штуку два раза');
+cart.countMinus(2000);
+cart.countMinus(2000);
+for (let i = 0; i < cart.items.length; i += 1) {
+  console.log(cart.items[i]);
+}
+
 console.log(`\nСуммарная стоимость товаров в корзине ${cart.sum()}`);

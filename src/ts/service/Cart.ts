@@ -76,5 +76,9 @@ export default class Cart {
     if (count && count > 1) {
       this._items[index].count = count - 1;
     }
+
+    if (count === 1) {
+      this.del(id);
+    }
   }
 }

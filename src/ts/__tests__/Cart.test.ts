@@ -125,3 +125,11 @@ test('cart countMinus', () => {
 
   expect(cart.items).toEqual([new Gadget(2000, 'Huawei', 'p40 pro', 100000, 1)]);
 });
+
+test('cart countMinus del', () => {
+  const cart = new Cart();
+  cart.add(new Gadget(2000, 'Huawei', 'p40 pro', 100000, 1));
+  cart.countMinus(2000);
+
+  expect(cart.items).toEqual([]);
+});
